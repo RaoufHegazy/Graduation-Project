@@ -22,7 +22,7 @@ class CloudUser {
 
   CloudUser.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : documentId = snapshot.id,
-        email = snapshot.data()[emailFiledName],
+        email = snapshot.data()[emailFieldName],
         id = snapshot.data()[idFieldName],
         role = snapshot.data()[roleFieldName],
         title = snapshot.data()[textFieldName],

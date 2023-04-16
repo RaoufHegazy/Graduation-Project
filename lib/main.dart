@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/views/sections/create_section.dart';
 import '/services/auth/auth_service.dart';
 import '/views/posts/create_update_post_view.dart';
 import '/constants/routes.dart';
@@ -28,10 +29,12 @@ class MyApp extends StatelessWidget {
       ),
       home: const LoginView(),
       routes: {
+        homeRoute: (context) => const HomePage(),
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
         mainRoute: (context) => const MainView(),
         verfiyEmailRoute: (context) => const VerfiyEmailView(),
+        createSectionRoute: (context) => const CreateSectionView(),
         // createOrUpdatePostRoute: (context) => const CreateUpdatePostView(),
       },
     );
