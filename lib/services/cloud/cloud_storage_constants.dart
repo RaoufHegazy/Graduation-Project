@@ -1,3 +1,7 @@
+//all
+const noFieldName = 'no.';
+const activeFieldName = 'active';
+
 //posts
 const ownerUserIdFieldName = 'user_id';
 const textFieldName = 'text';

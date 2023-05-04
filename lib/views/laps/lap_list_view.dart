@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/services/cloud/cloud_lap.dart';
 import '/utilities/dialogs/delete_dialog.dart';
 
-typedef SectionCallback = void Function(CloudLap lap);
+typedef LapCallback = void Function(CloudLap lap);
 
-class SectionsListView extends StatelessWidget {
+class LapsListView extends StatelessWidget {
   final Iterable<CloudLap> laps;
-  final SectionCallback onDeleteLap;
-  final SectionCallback onTap;
+  final LapCallback onDeleteLap;
+  final LapCallback onTap;
 
-  const SectionsListView(
+  const LapsListView(
       {super.key,
       required this.laps,
       required this.onDeleteLap,

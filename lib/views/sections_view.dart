@@ -7,14 +7,14 @@ import '/services/auth/auth_service.dart';
 import '/constants/routes.dart';
 import '/enums/menu_action.dart';
 
-class MainView extends StatefulWidget {
-  const MainView({super.key});
+class SectionsView extends StatefulWidget {
+  const SectionsView({super.key});
 
   @override
-  State<MainView> createState() => _MainViewState();
+  State<SectionsView> createState() => _SectionsViewState();
 }
 
-class _MainViewState extends State<MainView> {
+class _SectionsViewState extends State<SectionsView> {
   late final FirebaseCloudStorage _appService;
   String get userId => AuthService.firebase().currentuser!.id;
 
@@ -78,11 +78,11 @@ class _MainViewState extends State<MainView> {
                       await _appService.deleteSection(
                           documentId: section.documentId);
                     },
-                    onTap: (post) {
-                      // Navigator.of(context).pushNamed(
-                      //   createOrUpdatePostRoute,
-                      //   arguments: post,
-                      // );
+                    onTap: (section) {
+                      Navigator.of(context).pushNamed(
+                        lapsViewRoute,
+                        arguments: section,
+                      );
                     },
                   );
                 } else {

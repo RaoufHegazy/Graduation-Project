@@ -30,7 +30,7 @@ class _CreateSectionViewState extends State<CreateSectionView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("New section"),
+        title: const Text("New Section"),
         centerTitle: true,
       ),
       body: Column(
@@ -47,7 +47,7 @@ class _CreateSectionViewState extends State<CreateSectionView> {
                 secName: secName,
               );
               navigator.pushNamedAndRemoveUntil(
-                mainRoute,
+                sectionsViewRoute,
                 (route) => false,
               );
             },
