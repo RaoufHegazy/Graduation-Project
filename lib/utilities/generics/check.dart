@@ -25,19 +25,67 @@ class _CheckState extends State<Check> {
 
   @override
   Widget build(BuildContext context) {
-    final title = _appService.getTitle(userId: user!.id).toString();
-    if (user != null) {
-      if (user!.isEmailVerified) {
-        if (title == 'student') {
-          return const YearsView();
-        } else {
-          return const SectionsView();
+    return FutureBuilder(
+      future: _appService.getTitle(userId: user!.id),
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          //case ConnectionState.waiting:
+          //case ConnectionState.active:
+          case ConnectionState.done:
+            if (snapshot.hasData) {
+              final title = snapshot.data as String;
+              if (user != null) {
+                if (user!.isEmailVerified) {
+                  if (title == 'worker') {
+                    return const SectionsView();
+                  } else if (title == 'student') {
+                    return const YearsView();
+                  } else {
+                    return const LoginView();
+                  }
+                } else {
+                  return const VerfiyEmailView();
+                }
+              } else {
+                return const LoginView();
+              }
+            } else {
+              return const CircularProgressIndicator();
+            }
+
+          default:
+            return const CircularProgressIndicator();
         }
-      } else {
-        return const VerfiyEmailView();
-      }
-    } else {
-      return const LoginView();
-    }
+      },
+    );
+    // _appService.getTitle(userId: user!.id).then((value) {
+    //   final title = value;
+    //   if (user != null) {
+    //     if (user!.isEmailVerified) {
+    //       if (title == 'worker') {
+    //         return const SectionsView();
+    //       } else {
+    //         return const YearsView();
+    //       }
+    //     } else {
+    //       return const VerfiyEmailView();
+    //     }
+    //   } else {
+    //     return const LoginView();
+    //   }
+    // });
+    // if (user != null) {
+    //   if (user!.isEmailVerified) {
+    //     if ('title' == 'worker') {
+    //       return const SectionsView();
+    //     } else {
+    //       return const YearsView();
+    //     }
+    //   } else {
+    //     return const VerfiyEmailView();
+    //   }
+    // } else {
+    //   return const LoginView();
+    // }
   }
 }

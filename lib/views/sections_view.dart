@@ -16,7 +16,7 @@ class SectionsView extends StatefulWidget {
 
 class _SectionsViewState extends State<SectionsView> {
   late final FirebaseCloudStorage _appService;
-  String get userId => AuthService.firebase().currentuser!.id;
+  final user = AuthService.firebase().currentuser;
 
   @override
   void initState() {
@@ -26,17 +26,15 @@ class _SectionsViewState extends State<SectionsView> {
 
   @override
   Widget build(BuildContext context) {
+    var role = '';
+    _appService.getRole(userId: user!.id).then((value) {
+      role = value;
+    });
     return Scaffold(
         appBar: AppBar(
-          title: const Text("MainUI"),
+          title: const Text("Sections"),
           centerTitle: true,
           actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(createSectionRoute);
-              },
-              icon: const Icon(Icons.add),
-            ),
             PopupMenuButton<MenuAction>(
               onSelected: (value) async {
                 final navigator = Navigator.of(context);
@@ -51,11 +49,36 @@ class _SectionsViewState extends State<SectionsView> {
                       );
                     }
                     break;
+                  case MenuAction.createSection:
+                    Navigator.of(context).pushNamed(createSectionRoute);
+                    break;
+                  case MenuAction.createLap:
+                    break;
+                  case MenuAction.createDevice:
+                    break;
+                  case MenuAction.createYear:
+                    break;
+                  case MenuAction.createSubject:
+                    break;
+                  case MenuAction.createPost:
+                    break;
                 }
               },
               itemBuilder: (context) {
-                return const [
-                  PopupMenuItem<MenuAction>(
+                if (role == 'admin') {
+                  return [
+                    const PopupMenuItem<MenuAction>(
+                      value: MenuAction.createSection,
+                      child: Text("Create Section"),
+                    ),
+                    const PopupMenuItem<MenuAction>(
+                      value: MenuAction.logout,
+                      child: Text("Log Out"),
+                    ),
+                  ];
+                }
+                return [
+                  const PopupMenuItem<MenuAction>(
                     value: MenuAction.logout,
                     child: Text("Log Out"),
                   ),

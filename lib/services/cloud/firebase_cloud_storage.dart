@@ -230,23 +230,23 @@ class FirebaseCloudStorage {
   }
 
   Future<String> getTitle({required String userId}) async {
-    String? title;
-    users.doc(userId).get().then(
+    var title;
+    await users.doc(userId).get().then(
       (doc) {
-        title = doc.data()![titleFieldName] as String;
+        title = doc.data()![titleFieldName];
       },
     );
-    return title!;
+    return title;
   }
 
   Future<String> getRole({required String userId}) async {
-    String? role;
-    users.doc(userId).get().then(
+    var role;
+    await users.doc(userId).get().then(
       (doc) {
-        role = doc.data()![roleFieldName] as String;
+        role = doc.data()![roleFieldName];
       },
     );
-    return role!;
+    return role;
   }
 
   Future<void> createNewUser({

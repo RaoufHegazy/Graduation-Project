@@ -57,6 +57,18 @@ class _LapsViewState extends State<LapsView> {
                       );
                     }
                     break;
+                  case MenuAction.createSection:
+                    break;
+                  case MenuAction.createLap:
+                    break;
+                  case MenuAction.createDevice:
+                    break;
+                  case MenuAction.createYear:
+                    break;
+                  case MenuAction.createSubject:
+                    break;
+                  case MenuAction.createPost:
+                    break;
                 }
               },
               itemBuilder: (context) {
