@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import '../../services/cloud/cloud_post.dart';
+import 'package:graduation_project/services/cloud/cloud_device.dart';
 import '/utilities/dialogs/delete_dialog.dart';
 
-typedef LapCallback = void Function(CloudPost post);
+typedef LapCallback = void Function(CloudDevice device);
 
-class PostsListView extends StatelessWidget {
-  final Iterable<CloudPost> posts;
+class DevicesListView extends StatelessWidget {
+  final Iterable<CloudDevice> devices;
   final LapCallback onDeleteLap;
   final LapCallback onTap;
 
-  const PostsListView(
+  const DevicesListView(
       {super.key,
-      required this.posts,
+      required this.devices,
       required this.onDeleteLap,
       required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: posts.length,
+      itemCount: devices.length,
       itemBuilder: (context, index) {
-        final post = posts.elementAt(index);
+        final device = devices.elementAt(index);
         return ListTile(
           onTap: () {
-            onTap(post);
+            onTap(device);
           },
           title: Text(
-            post.text,
+            device.deviceName,
             maxLines: 1,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
@@ -35,7 +35,7 @@ class PostsListView extends StatelessWidget {
             onPressed: () async {
               final shouldDelete = await showDeleteDialog(context);
               if (shouldDelete) {
-                onDeleteLap(post);
+                onDeleteLap(device);
               }
             },
             icon: const Icon(Icons.delete),

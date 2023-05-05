@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/services/cloud/cloud_device.dart';
 import 'package:graduation_project/services/cloud/cloud_lap.dart';
-import 'package:graduation_project/services/cloud/cloud_section.dart';
-import 'package:graduation_project/views/laps/lap_list_view.dart';
 import '/services/cloud/firebase_cloud_storage.dart';
 import '/utilities/dialogs/logout_dialog.dart';
 import '/services/auth/auth_service.dart';
 import '/constants/routes.dart';
 import '/enums/menu_action.dart';
 import '/utilities/generics/get_arguments.dart';
+import 'devices/device_list_view.dart';
 
-class LapsView extends StatefulWidget {
-  const LapsView({super.key});
+class DevicesView extends StatefulWidget {
+  const DevicesView({super.key});
 
   @override
-  State<LapsView> createState() => _LapsViewState();
+  State<DevicesView> createState() => _DevicesViewState();
 }
 
-class _LapsViewState extends State<LapsView> {
+class _DevicesViewState extends State<DevicesView> {
   late final FirebaseCloudStorage _appService;
-  //String get userId => AuthService.firebase().currentuser!.id;
 
   @override
   void initState() {
@@ -28,17 +27,17 @@ class _LapsViewState extends State<LapsView> {
 
   @override
   Widget build(BuildContext context) {
-    final section = context.getArgument<CloudSection>();
+    final lap = context.getArgument<CloudLap>();
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Laps"),
+          title: const Text("Devices"),
           centerTitle: true,
           actions: [
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  createLapRoute,
-                  arguments: section,
+                  createDeviceRoute,
+                  arguments: lap,
                 );
               },
               icon: const Icon(Icons.add),
@@ -71,23 +70,24 @@ class _LapsViewState extends State<LapsView> {
           ],
         ),
         body: StreamBuilder(
-          stream: _appService.allLaps(secName: section!.secName),
+          stream: _appService.allDevices(lapName: lap!.lapName),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
               case ConnectionState.active:
                 if (snapshot.hasData) {
-                  final allLaps = snapshot.data as Iterable<CloudLap>;
-                  return LapsListView(
-                    laps: allLaps,
-                    onDeleteLap: (lap) async {
-                      await _appService.deleteLap(documentId: lap.documentId);
+                  final alldevices = snapshot.data as Iterable<CloudDevice>;
+                  return DevicesListView(
+                    devices: alldevices,
+                    onDeleteLap: (device) async {
+                      await _appService.deleteDevice(
+                          documentId: device.documentId);
                     },
-                    onTap: (lap) {
-                      Navigator.of(context).pushNamed(
-                        devicesViewRoute,
-                        arguments: lap,
-                      );
+                    onTap: (device) {
+                      // Navigator.of(context).pushNamed(
+                      //   createOrUpdatePostRoute,
+                      //   arguments: post,
+                      // );
                     },
                   );
                 } else {

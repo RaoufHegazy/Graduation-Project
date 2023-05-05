@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/utilities/generics/check.dart';
 import 'package:graduation_project/views/laps/create_lap.dart';
 import 'package:graduation_project/views/laps_view.dart';
 import 'package:graduation_project/views/sections/create_section.dart';
-import '/services/auth/auth_service.dart';
 import '/constants/routes.dart';
 import '/views/login_view.dart';
 import 'firebase_options.dart';
@@ -30,39 +30,23 @@ class MyApp extends StatelessWidget {
       ),
       home: const LoginView(),
       routes: {
-        homeRoute: (context) => const HomePage(),
+        check: (context) => const Check(),
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
-        sectionsViewRoute: (context) => const SectionsView(),
         verfiyEmailRoute: (context) => const VerfiyEmailView(),
+        sectionsViewRoute: (context) => const SectionsView(),
         createSectionRoute: (context) => const CreateSectionView(),
         lapsViewRoute: (context) => const LapsView(),
         createLapRoute: (context) => const CreateLapView(),
-        // createOrUpdatePostRoute: (context) => const CreateUpdatePostView(),
+        devicesViewRoute: (context) => const LapsView(),
+        createDeviceRoute: (context) => const CreateLapView(),
+        yearsViewRoute: (context) => const LapsView(),
+        createYearRoute: (context) => const CreateLapView(),
+        subjectsViewRoute: (context) => const LapsView(),
+        createSubjectRoute: (context) => const CreateLapView(),
+        postsViewRoute: (context) => const LapsView(),
+        createPostRoute: (context) => const CreateLapView(),
       },
     );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  final user = AuthService.firebase().currentuser;
-  @override
-  Widget build(BuildContext context) {
-    if (user != null) {
-      if (user!.isEmailVerified) {
-        return const SectionsView();
-      } else {
-        return const VerfiyEmailView();
-      }
-    } else {
-      return const LoginView();
-    }
   }
 }

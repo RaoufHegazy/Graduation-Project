@@ -1,27 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:graduation_project/services/cloud/cloud_device.dart';
 import 'package:graduation_project/services/cloud/cloud_lap.dart';
 import 'package:graduation_project/services/cloud/cloud_section.dart';
+import 'package:graduation_project/services/cloud/cloud_subject.dart';
+import 'package:graduation_project/services/cloud/cloud_year.dart';
 import '/services/cloud/cloud_post.dart';
 import '/services/cloud/cloud_storage_constants.dart';
 import '/services/cloud/cloud_storage_exceptions.dart';
 
 class FirebaseCloudStorage {
-  final posts = FirebaseFirestore.instance.collection("posts");
   final users = FirebaseFirestore.instance.collection("users");
   final sections = FirebaseFirestore.instance.collection("sections");
   final laps = FirebaseFirestore.instance.collection("laps");
   final devices = FirebaseFirestore.instance.collection("devices");
-
-  Future<void> updatePost({
-    required String documentId,
-    required String text,
-  }) async {
-    try {
-      await posts.doc(documentId).update({textFieldName: text});
-    } catch (e) {
-      CouldNotUpdatePostException;
-    }
-  }
+  final years = FirebaseFirestore.instance.collection("years");
+  final subjects = FirebaseFirestore.instance.collection("subjects");
+  final posts = FirebaseFirestore.instance.collection("posts");
 
   Future<void> deletePost({required String documentId}) async {
     try {
@@ -31,35 +25,85 @@ class FirebaseCloudStorage {
     }
   }
 
-  Stream<Iterable<CloudPost>> allPosts({required String ownerUserId}) =>
+  Stream<Iterable<CloudPost>> allPosts({required String subjectName}) =>
       posts.snapshots().map(((event) => event.docs
           .map((doc) => CloudPost.fromSnapshot(doc))
-          .where((post) => post.ownerUserId == ownerUserId)));
+          .where((post) => post.subjectName == subjectName)));
 
-  Future<Iterable<CloudPost>> getPosts({required String ownerUserId}) async {
+  Future<void> createNewPost({
+    required String text,
+    required String subjectName,
+  }) async {
+    await posts.add({
+      textFieldName: text,
+      subjectNameFieldName: subjectName,
+    });
+  }
+
+  Future<void> deleteSubject({required String documentId}) async {
     try {
-      return await posts
-          .where(ownerUserIdFieldName, isEqualTo: ownerUserId)
-          .get()
-          .then(
-            (value) => value.docs.map((doc) => CloudPost.fromSnapshot(doc)),
-          );
+      await subjects.doc(documentId).delete();
     } catch (e) {
-      throw CouldNotGetAllPostsException();
+      CouldNotDeleteSubjectException;
     }
   }
 
-  Future<CloudPost> createNewPost({required String ownerUserId}) async {
-    final document = await posts.add({
-      ownerUserIdFieldName: ownerUserId,
-      textFieldName: '',
+  Stream<Iterable<CloudSubject>> allSubjects({required String yearName}) =>
+      subjects.snapshots().map(((event) => event.docs
+          .map((doc) => CloudSubject.fromSnapshot(doc))
+          .where((subject) => subject.yearName == yearName)));
+
+  Future<void> createNewSubject({
+    required String subjectName,
+    required String yearName,
+  }) async {
+    await subjects.add({
+      subjectNameFieldName: subjectName,
+      yearNameFieldName: yearName,
     });
-    final fetched = await document.get();
-    return CloudPost(
-      documentId: fetched.id,
-      ownerUserId: ownerUserId,
-      text: '',
-    );
+  }
+
+  Future<void> deleteYear({required String documentId}) async {
+    try {
+      await years.doc(documentId).delete();
+    } catch (e) {
+      CouldNotDeleteYearException;
+    }
+  }
+
+  Stream<Iterable<CloudYear>> allYears() => years
+      .snapshots()
+      .map(((event) => event.docs.map((doc) => CloudYear.fromSnapshot(doc))));
+
+  Future<void> createNewYear({
+    required String yearName,
+  }) async {
+    await years.add({
+      yearNameFieldName: yearName,
+    });
+  }
+
+  Future<void> deleteDevice({required String documentId}) async {
+    try {
+      await devices.doc(documentId).delete();
+    } catch (e) {
+      CouldNotDeleteDeviceException;
+    }
+  }
+
+  Stream<Iterable<CloudDevice>> allDevices({required String lapName}) =>
+      devices.snapshots().map(((event) => event.docs
+          .map((doc) => CloudDevice.fromSnapshot(doc))
+          .where((device) => device.lapName == lapName)));
+
+  Future<void> createNewDevice({
+    required String deviceName,
+    required String lapName,
+  }) async {
+    await devices.add({
+      deviceNameFieldName: deviceName,
+      lapNameFieldName: lapName,
+    });
   }
 
   Stream<Iterable<CloudLap>> allLaps({required String secName}) =>
@@ -155,16 +199,6 @@ class FirebaseCloudStorage {
   Stream<Iterable<CloudSection>> allSections() => sections.snapshots().map(
       ((event) => event.docs.map((doc) => CloudSection.fromSnapshot(doc))));
 
-  // Future<Iterable<CloudSection>> allSections() async {
-  //   try {
-  //     return await sections.get().then(
-  //           (value) => value.docs.map((doc) => CloudSection.fromSnapshot(doc)),
-  //         );
-  //   } catch (e) {
-  //     throw CouldNotGetAllPostsException();
-  //   }
-  // }
-
   Future<void> createNewSection({
     required String secName,
   }) async {
@@ -195,17 +229,36 @@ class FirebaseCloudStorage {
     }
   }
 
+  Future<String> getTitle({required String userId}) async {
+    String? title;
+    users.doc(userId).get().then(
+      (doc) {
+        title = doc.data()![titleFieldName] as String;
+      },
+    );
+    return title!;
+  }
+
+  Future<String> getRole({required String userId}) async {
+    String? role;
+    users.doc(userId).get().then(
+      (doc) {
+        role = doc.data()![roleFieldName] as String;
+      },
+    );
+    return role!;
+  }
+
   Future<void> createNewUser({
     required String id,
     required String email,
     required String title,
   }) async {
-    await users.add({
+    await users.doc(id).set({
       displayNameFieldName: '',
       emailFieldName: email,
       titleFieldName: title,
       roleFieldName: 'user',
-      idFieldName: id,
     });
   }
 

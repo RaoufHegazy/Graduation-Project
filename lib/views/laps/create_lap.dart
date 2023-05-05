@@ -62,6 +62,7 @@ class _CreateLapViewState extends State<CreateLapView> {
               );
               navigator.pushNamedAndRemoveUntil(
                 lapsViewRoute,
+                arguments: section,
                 (route) => false,
               );
             },

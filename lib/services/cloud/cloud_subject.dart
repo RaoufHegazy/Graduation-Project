@@ -3,19 +3,20 @@ import 'package:flutter/foundation.dart';
 import '/services/cloud/cloud_storage_constants.dart';
 
 @immutable
-class CloudPost {
+class CloudSubject {
   final String documentId;
-  final String text;
   final String subjectName;
+  final String yearName;
 
-  const CloudPost({
+  const CloudSubject({
     required this.documentId,
-    required this.text,
     required this.subjectName,
+    required this.yearName,
   });
 
-  CloudPost.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+  CloudSubject.fromSnapshot(
+      QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : documentId = snapshot.id,
-        text = snapshot.data()[textFieldName],
-        subjectName = snapshot.data()[subjectNameFieldName];
+        subjectName = snapshot.data()[subjectNameFieldName],
+        yearName = snapshot.data()[yearNameFieldName];
 }

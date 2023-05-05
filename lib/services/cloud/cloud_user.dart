@@ -6,7 +6,6 @@ import '/services/cloud/cloud_storage_constants.dart';
 class CloudUser {
   final String documentId;
   final String email;
-  final String id;
   final String role;
   final String title;
   final String displayName;
@@ -14,7 +13,6 @@ class CloudUser {
   const CloudUser({
     required this.documentId,
     required this.email,
-    required this.id,
     required this.role,
     required this.title,
     required this.displayName,
@@ -23,8 +21,7 @@ class CloudUser {
   CloudUser.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : documentId = snapshot.id,
         email = snapshot.data()[emailFieldName],
-        id = snapshot.data()[idFieldName],
         role = snapshot.data()[roleFieldName],
-        title = snapshot.data()[textFieldName],
+        title = snapshot.data()[titleFieldName],
         displayName = snapshot.data()[displayNameFieldName];
 }

@@ -18,3 +18,9 @@ class CouldNotDeleteSectionException implements Exception {}
 class CouldNotUpdateLapException implements Exception {}
 
 class CouldNotDeleteLapException implements Exception {}
+
+class CouldNotDeleteDeviceException implements Exception {}
+
+class CouldNotDeleteSubjectException implements Exception {}
+
+class CouldNotDeleteYearException implements Exception {}

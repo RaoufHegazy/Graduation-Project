@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/services/cloud/cloud_lap.dart';
-import 'package:graduation_project/services/cloud/cloud_section.dart';
-import 'package:graduation_project/views/laps/lap_list_view.dart';
+import 'package:graduation_project/services/cloud/cloud_subject.dart';
+import 'package:graduation_project/services/cloud/cloud_year.dart';
 import '/services/cloud/firebase_cloud_storage.dart';
 import '/utilities/dialogs/logout_dialog.dart';
 import '/services/auth/auth_service.dart';
 import '/constants/routes.dart';
 import '/enums/menu_action.dart';
 import '/utilities/generics/get_arguments.dart';
+import 'subjects/subject_list_view.dart';
 
-class LapsView extends StatefulWidget {
-  const LapsView({super.key});
+class SubjectsView extends StatefulWidget {
+  const SubjectsView({super.key});
 
   @override
-  State<LapsView> createState() => _LapsViewState();
+  State<SubjectsView> createState() => _SubjectsViewState();
 }
 
-class _LapsViewState extends State<LapsView> {
+class _SubjectsViewState extends State<SubjectsView> {
   late final FirebaseCloudStorage _appService;
   //String get userId => AuthService.firebase().currentuser!.id;
 
@@ -28,17 +28,17 @@ class _LapsViewState extends State<LapsView> {
 
   @override
   Widget build(BuildContext context) {
-    final section = context.getArgument<CloudSection>();
+    final year = context.getArgument<CloudYear>();
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Laps"),
+          title: const Text("Subjects"),
           centerTitle: true,
           actions: [
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  createLapRoute,
-                  arguments: section,
+                  createSubjectRoute,
+                  arguments: year,
                 );
               },
               icon: const Icon(Icons.add),
@@ -71,22 +71,23 @@ class _LapsViewState extends State<LapsView> {
           ],
         ),
         body: StreamBuilder(
-          stream: _appService.allLaps(secName: section!.secName),
+          stream: _appService.allSubjects(yearName: year!.yearName),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
               case ConnectionState.active:
                 if (snapshot.hasData) {
-                  final allLaps = snapshot.data as Iterable<CloudLap>;
-                  return LapsListView(
-                    laps: allLaps,
+                  final allSubjects = snapshot.data as Iterable<CloudSubject>;
+                  return SubjectsListView(
+                    subjects: allSubjects,
                     onDeleteLap: (lap) async {
-                      await _appService.deleteLap(documentId: lap.documentId);
+                      await _appService.deleteSubject(
+                          documentId: lap.documentId);
                     },
-                    onTap: (lap) {
+                    onTap: (subject) {
                       Navigator.of(context).pushNamed(
-                        devicesViewRoute,
-                        arguments: lap,
+                        postsViewRoute,
+                        arguments: subject,
                       );
                     },
                   );

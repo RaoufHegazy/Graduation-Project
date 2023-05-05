@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import '../../services/cloud/cloud_post.dart';
+import 'package:graduation_project/services/cloud/cloud_year.dart';
 import '/utilities/dialogs/delete_dialog.dart';
 
-typedef LapCallback = void Function(CloudPost post);
+typedef SectionCallback = void Function(CloudYear year);
 
-class PostsListView extends StatelessWidget {
-  final Iterable<CloudPost> posts;
-  final LapCallback onDeleteLap;
-  final LapCallback onTap;
+class YearsListView extends StatelessWidget {
+  final Iterable<CloudYear> years;
+  final SectionCallback onDeleteSection;
+  final SectionCallback onTap;
 
-  const PostsListView(
+  const YearsListView(
       {super.key,
-      required this.posts,
-      required this.onDeleteLap,
+      required this.years,
+      required this.onDeleteSection,
       required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: posts.length,
+      itemCount: years.length,
       itemBuilder: (context, index) {
-        final post = posts.elementAt(index);
+        final year = years.elementAt(index);
         return ListTile(
           onTap: () {
-            onTap(post);
+            onTap(year);
           },
           title: Text(
-            post.text,
+            year.yearName,
             maxLines: 1,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
@@ -35,7 +35,7 @@ class PostsListView extends StatelessWidget {
             onPressed: () async {
               final shouldDelete = await showDeleteDialog(context);
               if (shouldDelete) {
-                onDeleteLap(post);
+                onDeleteSection(year);
               }
             },
             icon: const Icon(Icons.delete),

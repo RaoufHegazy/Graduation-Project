@@ -1,11 +1,3 @@
-//all
-const noFieldName = 'no.';
-const activeFieldName = 'active';
-
-//posts
-const ownerUserIdFieldName = 'user_id';
-const textFieldName = 'text';
-
 //users
 const emailFieldName = 'email';
 const idFieldName = 'id';
@@ -23,3 +15,13 @@ const lapSecretaryFieldName = 'lap_secretary';
 const lapEngineerFieldName = 'lap_engineer';
 
 //devices
+const deviceNameFieldName = 'device_name';
+
+//year
+const yearNameFieldName = 'year_name';
+
+//subject
+const subjectNameFieldName = 'subject_name';
+
+//post
+const textFieldName = 'text';
