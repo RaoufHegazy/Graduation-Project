@@ -92,9 +92,9 @@ class _SubjectsViewState extends State<SubjectsView> {
                   final allSubjects = snapshot.data as Iterable<CloudSubject>;
                   return SubjectsListView(
                     subjects: allSubjects,
-                    onDeleteLap: (lap) async {
+                    onDeleteLap: (subject) async {
                       await _appService.deleteSubject(
-                          documentId: lap.documentId);
+                          documentId: subject.documentId);
                     },
                     onTap: (subject) {
                       Navigator.of(context).pushNamed(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/services/cloud/cloud_lap.dart';
 import '/utilities/dialogs/delete_dialog.dart';
 
-typedef LapCallback = void Function(CloudLap lap);
+typedef LapCallback = void Function(CloudLap subject);
 
 class LapsListView extends StatelessWidget {
   final Iterable<CloudLap> laps;

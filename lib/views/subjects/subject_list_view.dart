@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/services/cloud/cloud_subject.dart';
 import '/utilities/dialogs/delete_dialog.dart';
 
-typedef LapCallback = void Function(CloudSubject subject);
+typedef SubjectCallback = void Function(CloudSubject subject);
 
 class SubjectsListView extends StatelessWidget {
   final Iterable<CloudSubject> subjects;
-  final LapCallback onDeleteLap;
-  final LapCallback onTap;
+  final SubjectCallback onDeleteLap;
+  final SubjectCallback onTap;
 
   const SubjectsListView(
       {super.key,

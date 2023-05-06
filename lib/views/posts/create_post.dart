@@ -52,7 +52,7 @@ class _CreatePostViewState extends State<CreatePostView> {
                 subjectName: subject!.subjectName.toString(),
               );
               navigator.pushNamedAndRemoveUntil(
-                devicesViewRoute,
+                postsViewRoute,
                 arguments: subject,
                 (route) => false,
               );

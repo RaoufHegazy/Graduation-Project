@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/services/cloud/cloud_post.dart';
+import 'package:graduation_project/services/cloud/cloud_subject.dart';
 import '/services/cloud/firebase_cloud_storage.dart';
 import '/utilities/dialogs/logout_dialog.dart';
 import '/services/auth/auth_service.dart';
@@ -17,7 +18,6 @@ class PostsView extends StatefulWidget {
 
 class _PostsViewState extends State<PostsView> {
   late final FirebaseCloudStorage _appService;
-  //String get userId => AuthService.firebase().currentuser!.id;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _PostsViewState extends State<PostsView> {
 
   @override
   Widget build(BuildContext context) {
-    final subject = context.getArgument<CloudPost>();
+    final subject = context.getArgument<CloudSubject>();
     return Scaffold(
         appBar: AppBar(
           title: const Text("Posts"),
