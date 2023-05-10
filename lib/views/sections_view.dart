@@ -97,6 +97,7 @@ class _SectionsViewState extends State<SectionsView> {
                   final allsections = snapshot.data as Iterable<CloudSection>;
                   return SectionsListView(
                     sections: allsections,
+                    role: role,
                     onDeleteSection: (section) async {
                       await _appService.deleteSection(
                           documentId: section.documentId);
