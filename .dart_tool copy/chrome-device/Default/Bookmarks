@@ -1,0 +1,240 @@
+{
+   "checksum": "06718ba9a1d6a06de19f0b15389c4dc2",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13299766788325998",
+            "date_last_used": "13328953049290663",
+            "guid": "34e37676-d5c7-41d0-8821-211d6c01ce4a",
+            "id": "6",
+            "name": "Google",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.google.com/"
+         }, {
+            "date_added": "13313665426594199",
+            "date_last_used": "13328741629505792",
+            "guid": "22756c7a-bc39-40cc-b037-f1805c792fe2",
+            "id": "7",
+            "name": "ترجمة جوجل - بحث Google‏",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.google.com/search?q=%D8%AA%D8%B1%D8%AC%D9%85%D8%A9+%D8%AC%D9%88%D8%AC%D9%84&sxsrf=ALiCzsZ1X3bKNEuyKIUbkq8-weST6JrZ6g%3A1669191809503&source=hp&ei=gdh9Y8WVHIeigAavm4qQDA&iflsig=AJiK0e8AAAAAY33mkZEa1M--5a78_0KYPva-TnAGNtVK&oq=%D8%AA%D8%B1&gs_lcp=Cgdnd3Mtd2l6EAEYATILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMggIABCxAxCDATIFCAAQgAQyCAgAELEDEIMBMggIABCxAxCDATILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMgUIABCABDIICAAQsQMQgwE6BwgjEOoCECc6CAguELEDEIMBOhEILhCABBCxAxCDARDHARDRA1CEFFj_FWCqKGgBcAB4AIABnAGIAbQCkgEDMC4ymAEAoAEBsAEB&sclient=gws-wiz"
+         }, {
+            "date_added": "13318720270678339",
+            "date_last_used": "13328903274100543",
+            "guid": "f73d2648-a266-42b0-8563-f228a9a15778",
+            "id": "8",
+            "name": "(4) YouTube",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.youtube.com/"
+         }, {
+            "date_added": "13321148157084861",
+            "date_last_used": "13324907723080701",
+            "guid": "0474a1f9-7dfc-4c22-a5af-7e6dd51bb0aa",
+            "id": "9",
+            "name": "New chat",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://chat.openai.com/chat"
+         }, {
+            "date_added": "13324037932203209",
+            "date_last_used": "13326895457700996",
+            "guid": "ead97742-8e95-40de-a5ef-22d73ce8e187",
+            "id": "10",
+            "name": "Poe - ChatGPT",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://poe.com/chatgpt"
+         }, {
+            "date_added": "13324583629210418",
+            "date_last_used": "13328890019818557",
+            "guid": "db444cbc-3961-4c94-97b0-9511dbf5bed0",
+            "id": "11",
+            "name": "Enhance Speech from Adobe | Free AI filter for cleaning up spoken audio",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://podcast.adobe.com/enhance"
+         }, {
+            "date_added": "13325844705971606",
+            "date_last_used": "13328371342359784",
+            "guid": "9c0f84f2-a6b2-4a9f-aed2-872288a302ca",
+            "id": "12",
+            "name": "chat-app - Authentication - Firebase console",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://console.firebase.google.com/project/chat-app-7937b/authentication/users"
+         }, {
+            "date_added": "13326733375137312",
+            "date_last_used": "13328282564762418",
+            "guid": "6bb7a7eb-a9ac-43f5-84b3-2c7fc7d49dda",
+            "id": "13",
+            "name": "(20+) Facebook",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.facebook.com/"
+         }, {
+            "date_added": "13327176276397794",
+            "date_last_used": "13328286951419767",
+            "guid": "ef20c46f-1d7e-4dd0-b7fb-f2248fe55b75",
+            "id": "14",
+            "name": "مقدمة دورة Git and Github » منصة المدرسة",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://almdrasa.com/tracks/programming-foundations/courses/git-github/lessons/introduction"
+         }, {
+            "date_added": "13328050318057138",
+            "date_last_used": "0",
+            "guid": "278b973d-f3d5-430c-a32b-9bffbe0050ef",
+            "id": "15",
+            "name": "Araby - Dashboard",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://dashboard.araby.ai/arabygpt"
+         }, {
+            "date_added": "13328643250175007",
+            "date_last_used": "13333365723876715",
+            "guid": "b215a7bc-1b48-4c7e-995c-c2279c493d73",
+            "id": "16",
+            "name": "Bing AI - Search",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.bing.com/search?form=MY0291&OCID=MY0291&q=Bing+AI&showconv=1"
+         }, {
+            "date_added": "13328886876132859",
+            "date_last_used": "0",
+            "guid": "bc2b7e1e-ed6f-4109-a661-f1ab4890997c",
+            "id": "17",
+            "name": "Mind Maps, Online Whiteboard for Visual Collaboration",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://miro.com/app/board/uXjVMHHtNp8=/"
+         }, {
+            "date_added": "13329217411386924",
+            "date_last_used": "0",
+            "guid": "a888b977-d7bd-456f-816b-08f11e204670",
+            "id": "18",
+            "name": "Hotpot.ai - Hotpot.ai",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://hotpot.ai/design/youtube-thumbnail?id=17"
+         }, {
+            "date_added": "13329667357798748",
+            "date_last_used": "13330501973544206",
+            "guid": "9dd44811-f177-4a36-8aea-db0c7f502ad5",
+            "id": "19",
+            "name": "Welcome | Clipchamp",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://app.clipchamp.com/editor/149c921a-1ee6-4465-b6b2-f3fa5e507b50"
+         }, {
+            "date_added": "13330512078391174",
+            "date_last_used": "13332092237444603",
+            "guid": "01d61f85-30de-459c-a432-ee0f4cd3bcf0",
+            "id": "20",
+            "name": "تعلم الكتابة على الكيبورد كالمحترفين",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://harmash.com/learn-typing"
+         }, {
+            "date_added": "13330595327445077",
+            "date_last_used": "0",
+            "guid": "4344e87d-ea88-42a9-a4f4-98535d684718",
+            "id": "21",
+            "name": "Feed | LinkedIn",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.linkedin.com/feed/"
+         }, {
+            "date_added": "13331221204206356",
+            "date_last_used": "0",
+            "guid": "d72d895a-249d-4b4a-99e2-76e5418f4050",
+            "id": "22",
+            "name": "Online Courses - Learn Anything, On Your Schedule | Udemy",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.udemy.com/home/my-courses/learning/"
+         }, {
+            "date_added": "13332069929754507",
+            "date_last_used": "0",
+            "guid": "a2739079-817b-4db6-a8a2-e740a3f09b53",
+            "id": "23",
+            "name": "Lesson | Small Talk & Conversational Vocabulary - Lesson | Small Talk & Conversational Vocabulary - Week 1 | Coursera",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://www.coursera.org/learn/lesson-small-talk-and-conversational-vocabulary/home/week/1"
+         }, {
+            "date_added": "13333059414293424",
+            "date_last_used": "0",
+            "guid": "6bcf4230-28da-447a-a24c-8d0cb02b3211",
+            "id": "24",
+            "name": "كتب وكورسات برمجة",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://github.com/EbookFoundation/free-programming-books"
+         }, {
+            "date_added": "13333187037681610",
+            "date_last_used": "0",
+            "guid": "8293c08d-1799-49e6-8f7e-366d92870668",
+            "id": "25",
+            "name": "Bard",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://bard.google.com/"
+         } ],
+         "date_added": "13334435110374636",
+         "date_last_used": "0",
+         "date_modified": "13333187037681610",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13334435110374639",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13334435110374641",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCFFUkHmJAQAAEgAgASoYMHFlQTdSU0pJb2haWllFLzBwUmU1dz09oAYEEqoBCBkSpQEKHENIQ2g1R0Z1SXFLeC9USC9aTFhaZTZSQzFqOD0SJDgyOTNjMDhkLTE3OTktNDllNi04ZjdlLTM2NmQ5Mjg3MDY2OBgAIAAoADD9sqj5kjE4pbuo+ZIxQKW7qPmSMUocS1pqWFJVbU9XY25BaUhkL05CNmVZMUkrT2QwPVohIh////55S3NIbldtZGNSaGdUNkJrNFlDNHlYL2xldHc9ZQtkJg0SqgEIFxKlAQocYzBiOEw1MDVUOXJqdGFGak04Y0RLZEJZOGhFPRIkYTI3MzkwNzktODE3Yi00ZGI2LWE4YTItZTc0MGEzZjA5YjUzGAAgACgAMNvW0eSOMTjz2NHkjjFA89jR5I4xShxuNC9OZlFlTTFPZmxuMHF1WG0xTjhzRWhRYU09WiEiH///+2RYU3Q0d3NTSThwei83TEhPQjUzK01hNHAwQT1lJpu8ABKqAQgWEqUBChxzU2Irem9ITVh2enFJMGxPSm1rWDM1K2xtc0U9EiRkNzJkODk1YS0yNDlkLTRiNGEtOTllMi03NmU1NDE4ZjQwNTAYACAAKAAwrdP3z4sxOILU98+LMUCC1PfPizFKHGtVanlVaElGU0pxYytQVmtjbWVQV0w0eE9YTT1aISIf///3UktMZUZtc0tSdUpMalVQYjNaUHlGaWRpVEc0PWUEotYHEqkBCBQSpAEKHFpaV3RQZTRrY2xsQ2pPc0dOZHNxaTY5NU9tUT0SJDAxZDYxZjg1LTMwZGUtNDU5Yy1hNDMyLWVlMGY0Y2QzYmNmMBgAIAAoADCGsKPvjjE4t5Hm/YgxQLeR5v2IMUocb1V5S2FzSE9LN1N0VEtSdmFtZGlYc3pWNFFJPVogIh7//2swK3NMTWVDd2I5U2l3ajhzNVg5ZWNGcEJrND1lwylx8hKpAQgVEqQBChwrSnk3Q3BiMndrak5Sd01wdk0rTVFFQm4vbW89EiQ0MzQ0ZTg3ZC1lYTg4LTQyYTktYTRmNC05ODUzNWQ2ODQ3MTgYACAAKAAwy5u/pYkxOK+cv6WJMUCvnL+liTFKHHp6Nk9VU1MvMzAxa0RaT21HeHp4WDBRTDByWT1aICIe//96SUk5U2RGZk9jTGQrbmJWNHhyVVExVU45bjg9ZUVNStESqQEIExKkAQocNE5oQ29nMlZqN0NNcnZwRkhGbVE5VzVEYzRrPRIkOWRkNDQ4MTEtZjE3Ny00YTM2LThhZWEtZGIwYzdmNTAyYWQ1GAAgACgAMNq0/fiIMTjutoDrhTFA7raA64UxShxhY1c1c0FodXkzbkd4T00xMHJsN2EvMHh3VkU9WiAiHv//aHEyMGx0YWt4eEkxYVF2QklkREVhd1BQY0o4PWWReRh9EqkBCBISpAEKHFJxV0xRVkFwbFZJVkFVTmVEWEVKemdRNDdORT0SJGE4ODhiOTc3LWQ3YmQtNDU2Zi04MTZiLTA4ZjExZTIwNDY3MBgAIAAoADDTqcWUhDE4kKzFlIQxQJCsxZSEMUoceDZSY3NubUplNkorR0xpWUgyQ3hvZ3Q3TEdnPVogIh7//y9xNnJ6UGdkckNYSnpwaGsvSnhOMyt5eUdsWT1lxV/MhBKpAQgREqQBChxBUUs3ckZPWDFWNzFOTTRpMHE4dFcyek9ZdjQ9EiRiYzJiN2UxZS1lZDZmLTQxMDktYTY2MS1mMWFiNDg5MDk5N2MYACAAKAAwjr21loMxOPjAtZaDMUD4wLWWgzFKHHZrWXFBVmdHeGV0Rnh2TjJpK3FDM0RSdVVObz1aICIe//5PT2lpRVIzQ1hNbUFSN3dXTGJ5UjZIdDBva1U9ZUr2QOASqAEICxKjAQocY2U1N2MxOU81NkhxQ2Z6YWlQWVluRkxPYnk0PRIkZGI0NDRjYmMtMzk2MS00Yzk0LTk3YjAtOTUxMWRiZjViZWQwGAAgAigCMKmuusyXMTiGv7WWgzFAjYG6zJcxShxQTW0weVZFazFVVnIyM2ZxU1o0QUFVWGt1WkE9Wh8iHf9YMndWN2xoNWVJMk5ORGNHaHl3SXFCa3Mvc0E9ZfdGfcUSqAEICRKjAQocMHZSWHViRUppdldkUUM3OHMxL0dKZWNlMUhjPRIkMDQ3NGExZjktN2RmYy00YzIyLWE1YWYtN2U2ZGQ1MWJiMGFhGAAgAigCMKiuusyXMTjKv7WWgzFAjYG6zJcxShxKV1FSYUwzOFlybVdRT2N5c3lKbEhUZlVQMFU9Wh8iHftROVA0SW1oU0w2MG13TG56V0pRTGJjakhzZE09ZWkbIvMSqQEIEBKkAQocT0dkQ1ZpOWVCWVhvZlNIOFY4bkk0N1RxSDA4PRIkYjIxNWE3YmMtMWI0OC00YzdlLTk5NWMtYzIyNzljNDkzZDczGAAgAigCMKeuusyXMTiNwLWWgzFAkIG6zJcxShxaL2NzUVhWOGFrajlPRUZBbi9pL0hlQW5DNUk9WiAiHv/9VkhTbGtjTnhTcEdmdWxQSEhJNFgzNnJtbFMwPWVWBYSGEqkBCA8SpAEKHEZ1RDNYQVEvWUVtVVkvckRRTU5tZXdOYVZmcz0SJDI3OGI5NzNkLWYzZDUtNDMwYy1hMzJiLTliZmZiZTAwNTBlZhgAIAIoAjClrrrMlzE4+L+1loMxQI+BusyXMUocNU9yY1FvTHVhcG1XT05XdGZMMUZTWTlZSjZvPVogIh7/+kJpamhRUUlWZXI4OEFtaHowYTJScDV2UHdXND1lPg+PNhKpAQgNEqQBChwrZFdVQ3gyNEV0ZzA3YXN3OGhGRUlKeUhablE9EiQ2YmI3YTdlYi1hOWFjLTQzZjUtODRiMy0yYzdmYzdkNDlkZGEYACACKAIwpK66zJcxOKPAtZaDMUCOgbrMlzFKHE9hNlV2Sm12OU1jaHpxUWRZRUd5ZElDNDVndz1aICIe/+tuckxuRGJCelBoYlFFSFAyR2tZdTVsdHAzUEU9ZcSRdsUSqAEIChKjAQocT1VPQUlLa20rdXdOV1Fhc2UzdERGb002dC84PRIkZWFkOTc3NDItOGU5NS00MGRlLWE1ZWYtMjJkNzNjZThlMTg3GAAgAigCMKKuusyXMTi6wLWWgzFAjYG6zJcxShxSQjRhWGYvcmVVVEgreWlPY0hmTmdxa3lSUkU9Wh8iHf5VaXRycTZ0T0RyVXg0TEtJTXI4MC9wWDF6eFE9ZYtiTdcSpwEIBhKiAQocWFFmUVlCR2NCcEhxUDUvd1NXbEdacVU5MjRzPRIkMzRlMzc2NzYtZDVjNy00MWQwLTg4MjEtMjExZDZjMDFjZTRhGAAgAigCMKGuusyXMTicv7WWgzFAi4G6zJcxShxMN3FFZFlXT2pLRzN0QVNHenFJS3RCL1BvLzA9Wh4iHHpiYm5LUFJSSHBzQWtCdlpUZ0VaQUM1Z25zaz1lEDD/5BKoAQgIEqMBChxuUmF4NW9lNTlEV1dTWStNS3FKeWxLWSt1c1U9EiRmNzNkMjY0OC1hMjY2LTQyYjAtODU2My1mMjI4YTlhMTU3NzgYACACKAIwoK66zJcxOLK/tZaDMUCMgbrMlzFKHGlUNUZHNndGNDI5Z0RvSk1raktvMk9oU214WT1aHyId73lnV016aVVEOWlHeHpUMHpFU1EzYmFTV0NJaz1lOPk5MxKpAQgMEqQBChxEK3RkdVdwT1QrUVdhYlVHc2lUL0poK004TTg9EiQ5YzBmODRmMi1hNmIyLTRhOWYtYWVkMi04NzIyODhhMzAyY2EYACACKAIwn666zJcxOOK/tZaDMUCOgbrMlzFKHDFSNmMxWjVQUkpMYjFWREE5Z2l0Ni9LV0tLaz1aICIe/9Y2a0l3YncwZUl6UVA0Qno0aHNpdU1mRGlFZUE9ZQ0V6OISiQEIARKEAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkZWU1Y2NlNWEtODllOC01MTBjLTg2YTktZmJhNGU3NjFiZWRmGAAgACgAMMH9ia71MDjFgoqu9TBAxYKKrvUwShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAABKpAQgOEqQBChxua3NVaWZxMFE0MnVKd3RaMGJtUkxlQjBONlk9EiRlZjIwYzQ2Zi0xZDdlLTRkZDAtYjdmYi1mMjI0OGZlNTViNzUYACACKAIwo666zJcxOKe+tZaDMUCPgbrMlzFKHDZpaXg0Vk9Mdkd4UzcrVFhORURvTUpzOFMzOD1aICIe//VHaTF2WVB1cGQwZEZjdUFlUjdLT25rbTVYL0U9Za2IcPESqAEIBxKjAQocMHJTV2JjY3VJdXdMNU9qUUxTY3pXQTJTMlk0PRIkMjI3NTZjN2EtYmMzOS00MGNjLWIwMzctZjE4MDVjNzkyZmUyGAAgAigCMKauusyXMTjbwLWWgzFAi4G6zJcxShx1cE04L0lqV2I5QUhCUWhoTWc2aFRYZlpreDA9Wh8iHb1sY1pTampmMXVsa205YldoY2c4dGF2ZEE2dDQ9ZRAw/+QSqgEIGBKlAQocRURrbVFyQ3o4cG81d1U2MVIxUjhCRmZtL2U0PRIkNmJjZjQyMzAtMjhkYS00NDdhLWEyNGMtOGQwY2IwMmIzMjExGAAgACgAMPPPu7ySMTiz97q8kjFAs/e6vJIxShxZcXB6ZE5MRWRwZ0lOU245eHV1TCt3RllKeTA9WiEiH////TBuM0x6dkQvVHpMb0t1YmRHU09YNlVRMFZwQT1l1Ezo0BKJAQgCEoQBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiRkNjhlMzRmZS01YWE3LTUwNGQtOGFhOC02ZDE4NDYyOGU1N2IYACAAKAAwwv2JrvUwON6Ciq71MEDegoqu9TBKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1aAGUAAAAAEokBCAMShAEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SJDlhMmEwZGE3LWUwZWYtNWE1NS1hYzVhLWYwMGZmNGQ4NDljYxgAIAAoADDH/Ymu9TA44IOKrvUwQOCDiq71MEoceXpOQjAxY241NEE3Y1JVMHVUKy9QZ21UdFVvPVoAZQAAAAAwADgA",
+   "version": 1
+}

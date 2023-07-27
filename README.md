@@ -1,4 +1,4 @@
-# graduation_project
+# business_card
 
 A new Flutter project.
 

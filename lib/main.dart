@@ -1,60 +1,37 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/utilities/generics/check.dart';
-import 'package:graduation_project/views/devices/create_device.dart';
-import 'package:graduation_project/views/devices_view.dart';
-import 'package:graduation_project/views/laps/create_lap.dart';
-import 'package:graduation_project/views/laps_view.dart';
-import 'package:graduation_project/views/posts/create_post.dart';
-import 'package:graduation_project/views/posts_view.dart';
-import 'package:graduation_project/views/sections/create_section.dart';
-import 'package:graduation_project/views/subjects/create_subject.dart';
-import 'package:graduation_project/views/subjects_view.dart';
-import 'package:graduation_project/views/years/create_year.dart';
-import 'package:graduation_project/views/years_view.dart';
-import '/constants/routes.dart';
-import '/views/login_view.dart';
-import 'firebase_options.dart';
-import 'views/sections_view.dart';
-import '/views/register_view.dart';
-import 'views/verify_email_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:v46/shared/bloc_observer.dart';
+import 'package:v46/shared/network/local/cache_helper.dart';
+import 'package:v46/shared/styles/theme.dart';
+import 'modules/fee_app/fee_splash/fee_splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(const MyApp());
+  await Firebase.initializeApp();
+
+  Bloc.observer = SimpleBlocObserver();
+  await cache_helper.init();
+
+  //get data from cache
+  var on_boarding = cache_helper.get_data(key: 'on_boarding');
+
+  runApp(app(on_boarding));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class app extends StatelessWidget {
+  // final Widget start_wiget;
+  final on_boarding ;
+
+  app(this.on_boarding);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'my app',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Check(),
-      routes: {
-        check: (context) => const Check(),
-        loginRoute: (context) => const LoginView(),
-        registerRoute: (context) => const RegisterView(),
-        verifyEmailRoute: (context) => const VerifyEmailView(),
-        sectionsViewRoute: (context) => const SectionsView(),
-        createSectionRoute: (context) => const CreateSectionView(),
-        lapsViewRoute: (context) => const LapsView(),
-        createLapRoute: (context) => const CreateLapView(),
-        devicesViewRoute: (context) => const DevicesView(),
-        createDeviceRoute: (context) => const CreateDeviceView(),
-        yearsViewRoute: (context) => const YearsView(),
-        createYearRoute: (context) => const CreateYearView(),
-        subjectsViewRoute: (context) => const SubjectsView(),
-        createSubjectRoute: (context) => const CreateSubjectView(),
-        postsViewRoute: (context) => const PostsView(),
-        createPostRoute: (context) => const CreatePostView(),
-      },
+      debugShowCheckedModeBanner: false,
+      theme: lightmode,
+      darkTheme: darkmode,
+      home:fee_splash_screen(on_boarding: on_boarding ?? false,),
     );
   }
 }
