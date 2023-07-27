@@ -16,7 +16,7 @@ class FireBaseAuthProvider implements AuthProvider {
         email: email,
         password: password,
       );
-      final user = currentuser;
+      final user = currentUser;
       if (user != null) {
         return user;
       } else {
@@ -30,15 +30,15 @@ class FireBaseAuthProvider implements AuthProvider {
       } else if (e.code == "invalid-email") {
         throw InvalidEmailAuthException();
       } else {
-        throw GnericAuthException();
+        throw GenericAuthException();
       }
     } catch (_) {
-      throw GnericAuthException();
+      throw GenericAuthException();
     }
   }
 
   @override
-  AuthUser? get currentuser {
+  AuthUser? get currentUser {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       return AuthUser.fromFirebase(user);
@@ -57,7 +57,7 @@ class FireBaseAuthProvider implements AuthProvider {
         email: email,
         password: password,
       );
-      final user = currentuser;
+      final user = currentUser;
       if (user != null) {
         return user;
       } else {
@@ -69,10 +69,10 @@ class FireBaseAuthProvider implements AuthProvider {
       } else if (e.code == "wrong-password") {
         throw WrongPasswordAuthException();
       } else {
-        throw GnericAuthException();
+        throw GenericAuthException();
       }
     } catch (_) {
-      throw GnericAuthException();
+      throw GenericAuthException();
     }
   }
 
@@ -87,7 +87,7 @@ class FireBaseAuthProvider implements AuthProvider {
   }
 
   @override
-  Future<void> sendEmailVerfication() async {
+  Future<void> sendEmailVerification() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       await user.sendEmailVerification();

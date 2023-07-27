@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/services/cloud/cloud_subject.dart';
 import 'package:graduation_project/services/cloud/cloud_year.dart';
-import '/services/cloud/firebase_cloud_storage.dart';
-import '/utilities/dialogs/logout_dialog.dart';
-import '/services/auth/auth_service.dart';
+
 import '/constants/routes.dart';
 import '/enums/menu_action.dart';
+import '/services/auth/auth_service.dart';
+import '/services/cloud/firebase_cloud_storage.dart';
+import '/utilities/dialogs/logout_dialog.dart';
 import '/utilities/generics/get_arguments.dart';
 import 'subjects/subject_list_view.dart';
 
@@ -57,18 +58,20 @@ class _SubjectsViewState extends State<SubjectsView> {
                       );
                     }
                     break;
-                  case MenuAction.createSection:
+                  default:
                     break;
-                  case MenuAction.createLap:
-                    break;
-                  case MenuAction.createDevice:
-                    break;
-                  case MenuAction.createYear:
-                    break;
-                  case MenuAction.createSubject:
-                    break;
-                  case MenuAction.createPost:
-                    break;
+                  // case MenuAction.createSection:
+                  //   break;
+                  // case MenuAction.createLap:
+                  //   break;
+                  // case MenuAction.createDevice:
+                  //   break;
+                  // case MenuAction.createYear:
+                  //   break;
+                  // case MenuAction.createSubject:
+                  //   break;
+                  // case MenuAction.createPost:
+                  //   break;
                 }
               },
               itemBuilder: (context) {

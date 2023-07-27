@@ -73,15 +73,15 @@ class _RegisterViewState extends State<RegisterView> {
                   email: email,
                   password: password,
                 );
-                AuthService.firebase().sendEmailVerfication();
-                final user = AuthService.firebase().currentuser;
+                AuthService.firebase().sendEmailVerification();
+                final user = AuthService.firebase().currentUser;
                 await _appService.createNewUser(
                   id: user!.id,
                   email: email,
                   title: title,
                 );
                 navigator.pushNamedAndRemoveUntil(
-                  verfiyEmailRoute,
+                  verifyEmailRoute,
                   (route) => false,
                 );
               } on WeakPasswordAuthException {
@@ -99,7 +99,7 @@ class _RegisterViewState extends State<RegisterView> {
                   context,
                   "Invalid email",
                 );
-              } on GnericAuthException {
+              } on GenericAuthException {
                 await showErrorDialog(
                   context,
                   "Error",

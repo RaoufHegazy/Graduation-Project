@@ -24,4 +24,11 @@ class CloudUser {
         role = snapshot.data()[roleFieldName],
         title = snapshot.data()[titleFieldName],
         displayName = snapshot.data()[displayNameFieldName];
+
+  CloudUser.fromdoc(DocumentSnapshot<Map<String, dynamic>> snapshot)
+      : documentId = snapshot.id,
+        email = snapshot.data()![emailFieldName] as String,
+        role = snapshot.data()![roleFieldName]as String,
+        title = snapshot.data()![titleFieldName]as String,
+        displayName = snapshot.data()![displayNameFieldName]as String;
 }

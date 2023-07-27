@@ -17,7 +17,7 @@ import '/views/login_view.dart';
 import 'firebase_options.dart';
 import 'views/sections_view.dart';
 import '/views/register_view.dart';
-import '/views/verfiy_email_view.dart';
+import 'views/verify_email_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,12 +36,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginView(),
+      home: const Check(),
       routes: {
         check: (context) => const Check(),
         loginRoute: (context) => const LoginView(),
         registerRoute: (context) => const RegisterView(),
-        verfiyEmailRoute: (context) => const VerfiyEmailView(),
+        verifyEmailRoute: (context) => const VerifyEmailView(),
         sectionsViewRoute: (context) => const SectionsView(),
         createSectionRoute: (context) => const CreateSectionView(),
         lapsViewRoute: (context) => const LapsView(),

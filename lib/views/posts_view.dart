@@ -28,9 +28,10 @@ class _PostsViewState extends State<PostsView> {
   @override
   Widget build(BuildContext context) {
     final subject = context.getArgument<CloudSubject>();
+    final subjectName = subject!.subjectName;
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Posts"),
+          title: Text(subjectName),
           centerTitle: true,
           actions: [
             IconButton(
@@ -82,7 +83,7 @@ class _PostsViewState extends State<PostsView> {
           ],
         ),
         body: StreamBuilder(
-          stream: _appService.allPosts(subjectName: subject!.subjectName),
+          stream: _appService.allPosts(subjectName: subjectName),
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:

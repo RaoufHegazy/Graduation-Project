@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:graduation_project/services/cloud/cloud_blog.dart';
 import 'package:graduation_project/services/cloud/cloud_device.dart';
 import 'package:graduation_project/services/cloud/cloud_lap.dart';
 import 'package:graduation_project/services/cloud/cloud_section.dart';
 import 'package:graduation_project/services/cloud/cloud_subject.dart';
+import 'package:graduation_project/services/cloud/cloud_user.dart';
 import 'package:graduation_project/services/cloud/cloud_year.dart';
+
 import '/services/cloud/cloud_post.dart';
 import '/services/cloud/cloud_storage_constants.dart';
 import '/services/cloud/cloud_storage_exceptions.dart';
@@ -16,6 +19,24 @@ class FirebaseCloudStorage {
   final years = FirebaseFirestore.instance.collection("years");
   final subjects = FirebaseFirestore.instance.collection("subjects");
   final posts = FirebaseFirestore.instance.collection("posts");
+  final chats = FirebaseFirestore.instance.collection("chats");
+
+  Future<void> createNewBlogPost({
+    required String text,
+    required String ownerId,
+    required String where,
+  }) async {
+    await chats.add({
+      textFieldName: text,
+      ownerIdFieldName: ownerId,
+      whereFieldName: where,
+    });
+  }
+
+  Stream<Iterable<CloudBlog>> getBlogPosts({required String where}) =>
+      chats.snapshots().map(((event) => event.docs
+          .map((doc) => CloudBlog.fromSnapshot(doc))
+          .where((post) => post.where == where)));
 
   Future<void> deletePost({required String documentId}) async {
     try {
@@ -230,23 +251,30 @@ class FirebaseCloudStorage {
   }
 
   Future<String> getTitle({required String userId}) async {
-    var title;
+    String? title;
     await users.doc(userId).get().then(
       (doc) {
         title = doc.data()![titleFieldName];
       },
     );
-    return title;
+    return title!;
   }
 
   Future<String> getRole({required String userId}) async {
-    var role;
+    String? role;
     await users.doc(userId).get().then(
       (doc) {
         role = doc.data()![roleFieldName];
       },
     );
-    return role;
+    return role!;
+  }
+
+  Future getUser({required String userId}) async {
+    final user = await users.doc(userId).get();
+
+    CloudUser x = CloudUser.fromdoc(user);
+    return user;
   }
 
   Future<void> createNewUser({

@@ -62,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
                   email: email,
                   password: password,
                 );
-                final user = AuthService.firebase().currentuser;
+                final user = AuthService.firebase().currentUser;
                 if (user?.isEmailVerified ?? false) {
                   navigator.pushNamedAndRemoveUntil(
                     check,
@@ -70,7 +70,7 @@ class _LoginViewState extends State<LoginView> {
                   );
                 } else {
                   navigator.pushNamedAndRemoveUntil(
-                    verfiyEmailRoute,
+                    verifyEmailRoute,
                     (route) => false,
                   );
                 }
@@ -84,10 +84,10 @@ class _LoginViewState extends State<LoginView> {
                   context,
                   "Wrong Password",
                 );
-              } on GnericAuthException {
+              } on GenericAuthException {
                 await showErrorDialog(
                   context,
-                  "Authintication Error",
+                  "Authentication Error",
                 );
               }
             },

@@ -16,7 +16,7 @@ class SectionsView extends StatefulWidget {
 
 class _SectionsViewState extends State<SectionsView> {
   late final FirebaseCloudStorage _appService;
-  final user = AuthService.firebase().currentuser;
+  final user = AuthService.firebase().currentUser;
 
   @override
   void initState() {
